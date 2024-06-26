@@ -11,10 +11,12 @@ const ViewOtherPage = () => {
   // State for storing all the gifts fetched from the database.
   const [otherGifts, setOtherGifts] = useState([]);
   const navigate = useNavigate();
+  const API_BASE_URL = useContext(MemberContext);
+
 
   const fetchOtherGifts = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/get_gifts_other/${selfMember.member_id}/`, {
+      const response = await axios.get(`${API_BASE_URL}/get_gifts_other/${selfMember.member_id}/`, {
       }, [selfMember]);
       const giftsData = response.data.gifts;
     
