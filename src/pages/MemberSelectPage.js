@@ -16,7 +16,7 @@ const MemberSelectPage = () => {
     // Function to fetch members
     const fetchMembers = async () => {
       try {
-        console.log('API_BASE_URL:', API_BASE_URL);
+        console.log('In try: API_BASE_URL:', API_BASE_URL);
         const response = await axios.get(`${API_BASE_URL}/get_all_members/`);
         // Sort members alphabetically by member_name
         // localCompare makes sure sorting varies by locale, probably not important for just a few people, but good practice
@@ -27,6 +27,7 @@ const MemberSelectPage = () => {
         setMembers(sortedMembers);
         // console.log('Members:', sortedMembers);
       } catch (error) {
+        console.log('In error: API_BASE_URL:', API_BASE_URL);
         console.error('Error fetching members:', error);
       }
     };
