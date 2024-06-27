@@ -10,12 +10,10 @@ import { MemberContext } from '../context/MemberContext';
  */
 const ViewSelfPage = () => {
   // Destructure `selfMember` from the context
-  const { selfMember } = useContext(MemberContext);
+  const { selfMember, API_BASE_URL } = useContext(MemberContext);
   // State for storing all the gifts fetched from the database.
   const [selfGifts, setSelfGifts] = useState([]);
   const navigate = useNavigate();
-  const API_BASE_URL = useContext(MemberContext);
-
 
   const fetchSelfGifts = async () => {
     try {

@@ -7,17 +7,16 @@ import "../App.css";
 const MemberSelectPage = () => {
   const [members, setMembers] = useState([]);
   const [selectedMember, setSelectedMember] = useState('');
-  const {setSelfMember} = useContext(MemberContext);
-  const {setOtherMembers} = useContext(MemberContext);
-  const {setAllMembers} = useContext(MemberContext);
+  const {setSelfMember, setOtherMembers, setAllMembers, API_BASE_URL} = useContext(MemberContext);
   const navigate = useNavigate();
-  const API_BASE_URL = useContext(MemberContext);
+
 
 
   useEffect(() => {
     // Function to fetch members
     const fetchMembers = async () => {
       try {
+        console.log('API_BASE_URL:', API_BASE_URL);
         const response = await axios.get(`${API_BASE_URL}/get_all_members/`);
         // Sort members alphabetically by member_name
         // localCompare makes sure sorting varies by locale, probably not important for just a few people, but good practice
