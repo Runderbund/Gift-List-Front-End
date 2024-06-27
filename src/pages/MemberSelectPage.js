@@ -15,6 +15,8 @@ const MemberSelectPage = () => {
   useEffect(() => {
     // Function to fetch members
     const fetchMembers = async () => {
+
+      console.log('Above try: API_BASE_URL:', API_BASE_URL);
       try {
         console.log('In try: API_BASE_URL:', API_BASE_URL);
         const response = await axios.get(`${API_BASE_URL}/get_all_members/`);
@@ -27,8 +29,7 @@ const MemberSelectPage = () => {
         setMembers(sortedMembers);
         // console.log('Members:', sortedMembers);
       } catch (error) {
-        console.log('In error: API_BASE_URL:', API_BASE_URL);
-        console.error('Error fetching members:', error);
+        console.error('Error fetching members:', error, 'API_BASE_URL:', API_BASE_URL);
       }
     };
 
