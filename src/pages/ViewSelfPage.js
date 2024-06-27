@@ -17,8 +17,10 @@ const ViewSelfPage = () => {
 
   const fetchSelfGifts = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/get_gifts_self/${selfMember.member_id}/`, {
+      const response = await axios.get(`http://localhost:8000/get_gifts_self/${selfMember.member_id}/`, {
       }, [selfMember]);
+      // const response = await axios.get(`${API_BASE_URL}/get_gifts_self/${selfMember.member_id}/`, {
+      // }, [selfMember]);
       const giftsData = response.data.gifts;
     
       setSelfGifts(Object.values(giftsData));

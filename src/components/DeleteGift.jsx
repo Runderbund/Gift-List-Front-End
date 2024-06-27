@@ -8,7 +8,9 @@ const DeleteGift = ({ member, closePopup, fetchGifts, gift_id }) => {
     
   const deleteGift = async () => {
     try {
-      await axios.delete(`${API_BASE_URL}/delete_gift_by_id/${gift_id}`);
+      // await axios.delete(`${API_BASE_URL}/delete_gift_by_id/${gift_id}`);
+      await axios.delete(`http://localhost:8000/delete_gift_by_id/${gift_id}`);
+
       fetchGifts();
       closePopup();
       console.log("Gift deleted successfully");
