@@ -7,7 +7,8 @@ import { MemberContext } from '../context/MemberContext';
 // ViewOtherPage component is responsible for rendering the gift boxes for all non-self members
 const ViewOtherPage = () => {
   // Destructure `otherMembers` from the context which contains all members except the current user.
-  const { otherMembers, selfMember, API_BASE_URL } = useContext(MemberContext);
+  const { otherMembers, selfMember } = useContext(MemberContext);
+  // const { otherMembers, selfMember, API_BASE_URL } = useContext(MemberContext);
   // State for storing all the gifts fetched from the database.
   const [otherGifts, setOtherGifts] = useState([]);
   const navigate = useNavigate();

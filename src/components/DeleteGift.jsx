@@ -4,7 +4,7 @@ import { MemberContext } from '../context/MemberContext';
 
 
 const DeleteGift = ({ member, closePopup, fetchGifts, gift_id }) => {
-  const { API_BASE_URL } = useContext(MemberContext);
+  // const { API_BASE_URL } = useContext(MemberContext);
     
   const deleteGift = async () => {
     try {

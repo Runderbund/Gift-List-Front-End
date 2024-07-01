@@ -7,7 +7,8 @@ import "../App.css";
 const MemberSelectPage = () => {
   const [members, setMembers] = useState([]);
   const [selectedMember, setSelectedMember] = useState('');
-  const {setSelfMember, setOtherMembers, setAllMembers, API_BASE_URL} = useContext(MemberContext);
+  const {setSelfMember, setOtherMembers, setAllMembers} = useContext(MemberContext);
+  // const {setSelfMember, setOtherMembers, setAllMembers, API_BASE_URL} = useContext(MemberContext);
   const navigate = useNavigate();
 
 
@@ -16,9 +17,9 @@ const MemberSelectPage = () => {
     // Function to fetch members
     const fetchMembers = async () => {
 
-      console.log('Above try: API_BASE_URL:', API_BASE_URL);
+      // console.log('Above try: API_BASE_URL:', API_BASE_URL);
       try {
-        console.log('In try: API_BASE_URL:', API_BASE_URL);
+        // console.log('In try: API_BASE_URL:', API_BASE_URL);
         // const response = await axios.get(`${API_BASE_URL}/get_all_members/`);
         const response = await axios.get(`http://localhost:8000/get_all_members/`);
 
@@ -32,7 +33,8 @@ const MemberSelectPage = () => {
         setMembers(sortedMembers);
         // console.log('Members:', sortedMembers);
       } catch (error) {
-        console.error('Error fetching members:', error, 'API_BASE_URL:', API_BASE_URL);
+        console.error('Error fetching members:', error);
+        // console.error('Error fetching members:', error, 'API_BASE_URL:', API_BASE_URL);
       }
     };
 

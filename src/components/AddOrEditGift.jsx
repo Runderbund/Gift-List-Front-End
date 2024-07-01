@@ -8,7 +8,7 @@ import "../App.css";
 
 const AddOrEditGift = ({ member, isSelfView, closePopup, fetchGifts, addOrEdit, gift_id, hoverTexts}) => {
 
-  const { selfMember, allMembers, API_BASE_URL } = useContext(MemberContext);
+  // const { selfMember, allMembers, API_BASE_URL } = useContext(MemberContext);
   const [visibleToAll, setVisibleToAll] = useState(true); // Default visibility is all members
   const [visibleToMembers, setVisibleToMembers] = useState(new Set());
   const [itemName, setItemName] = useState('');

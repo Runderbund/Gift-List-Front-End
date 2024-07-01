@@ -10,7 +10,9 @@ import { MemberContext } from '../context/MemberContext';
  */
 const ViewSelfPage = () => {
   // Destructure `selfMember` from the context
-  const { selfMember, API_BASE_URL } = useContext(MemberContext);
+  const { selfMember } = useContext(MemberContext);
+  // const { selfMember, API_BASE_URL } = useContext(MemberContext);
+
   // State for storing all the gifts fetched from the database.
   const [selfGifts, setSelfGifts] = useState([]);
   const navigate = useNavigate();

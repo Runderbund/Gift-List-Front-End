@@ -10,7 +10,7 @@ export const MemberProvider = ({ children }) => {
   const [selfMember, setSelfMember] = useState(null);
   const [otherMembers, setOtherMembers] = useState([]);
   const [allMembers, setAllMembers] = useState([]);
-  const API_BASE_URL = "http://connect-front-1.eba-hzzsfpac.us-west-2.elasticbeanstalk.com";
+  // const API_BASE_URL = "http://connect-front-1.eba-hzzsfpac.us-west-2.elasticbeanstalk.com";
   // This depends on the environment url. So I'll have to change for each new environment.
   
 
@@ -22,7 +22,7 @@ export const MemberProvider = ({ children }) => {
     setSelfMember, 
     otherMembers,
     setOtherMembers,
-    API_BASE_URL
+    // API_BASE_URL
   };
 
   return (
